@@ -19,7 +19,7 @@
 .leaflet-credits-control a {
     font-size:8pt;
     color:#333333 !important;
-    text-decoration:none;
+    text-decoration:underline;  /*Jack modified*/
 
     text-align:right;
 

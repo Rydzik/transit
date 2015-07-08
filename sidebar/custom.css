@@ -19,3 +19,10 @@
 .fa-question-circle{
 font-size: 1.4em;
 }
+/* TO DO -- FIX THIS position layer control */
+.leaflet-top .leaflet-control {
+	margin-top: 60px;
+	}
+.leaflet-top .leaflet-control-zoom {
+	margin-top: 5px;
+}

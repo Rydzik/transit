@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset=utf-8 />
-  <title>Bus location live feed</title>
+  <title>CTfastrak location live feed</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
@@ -11,6 +11,10 @@
   <!-- Load Esri Leaflet from CDN -->
   <!-- we encourage you to replace 'latest' with a hardcode version number (like '1.0.0-rc.7') in production applications -->
   <script src="//cdn.jsdelivr.net/leaflet.esri/latest/esri-leaflet.js"></script>
+  
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="src/leaflet-sidebar.js"></script>
+	<link rel="stylesheet" href="css/leaflet-sidebar.css" />
 
   <style>
     body { margin:0; padding:0; }
@@ -19,21 +23,36 @@
 </head>
 <body>
 
+<div id="sidebar" class="sidebar collapsed">
+		<!-- Nav tabs -->
+		<ul class="sidebar-tabs" role="tablist">
+			<li><a href="#home" role="tab"><i class="fa fa-question-circle"></i></a></li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="sidebar-content active">
+			<div class="sidebar-pane" id="home">
+			  <p>CTfastrak bus location live feed, via City of Hartford</p>
+			  <p>Learn more at <a href='https://github.com/JackDougherty/transit'>https://github.com/JackDougherty/transit</a></p>
+			</div>
+		</div>
+	</div>
+
+
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([41.7665, -72.6814], 15);
+  var map = L.map('map').setView([41.7665, -72.68], 15);
   L.esri.basemapLayer('Streets').addTo(map);
-  L.esri.featureLayer('http://gis1.hartford.gov/arcgis/rest/services/CTTransitBusses/MapServer/0').addTo(map);
   
-  /* L.esri.featureLayer('http://gis1.hartford.gov/arcgis/rest/services/CTTransitBusses/MapServer/0', {
-    pointToLayer: function (geojson, latlng) {
-      return L.marker(latlng, {
-        // icon: icons[geojson.properties.direction.toLowerCase()]
-        icon: 
-      });
-    },
-  }).addTo(map); */
+  var sidebar = L.control.sidebar('sidebar').addTo(map);
+  sidebar.open('home');
+  
+  var busses = L.esri.featureLayer('http://gis1.hartford.gov/arcgis/rest/services/CTTransitBusses/MapServer/0').addTo(map);
+  
+  busses.bindPopup(function (feature) {
+    return L.Util.template('<p>{label}</p>', feature.properties);
+  });
+  
 </script>
 
 </body>

@@ -25,7 +25,12 @@
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([41.7665, -72.68], 15);
+  var map = L.map('map', {
+    center: [41.7665, -72.68],
+    zoom: 15,
+    zoomControl: false, // add new zoom control further below, after controlCredits
+  });
+  
   L.esri.basemapLayer('Streets').addTo(map);
 
   var busses = L.esri.featureLayer('http://gis1.hartford.gov/arcgis/rest/services/CTTransitBusses/MapServer/0').addTo(map);
@@ -36,10 +41,12 @@
 
   L.controlCredits({
       image: "credits/question-icon.png",
-      position: "topright",
+      position: "topleft",
       text: "Learn how to map CT fastrak bus location live data<br/>http://github.com/jackdougherty/transit",
       link: "http://github.com/jackdougherty/transit"
   }).addTo(map);
+  
+  new L.Control.Zoom({position: 'topleft'}).addTo(map);
 
 </script>
 

@@ -12,31 +12,26 @@
   <!-- we encourage you to replace 'latest' with a hardcode version number (like '1.0.0-rc.7') in production applications -->
   <script src="//cdn.jsdelivr.net/leaflet.esri/latest/esri-leaflet.js"></script>
 
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="sidebar/leaflet-sidebar.js"></script>
-	<link rel="stylesheet" href="sidebar/leaflet-sidebar.css" />
-	<link rel="stylesheet" href="sidebar/custom.css"/>
-
   <style>
     body { margin:0; padding:0; }
     #map { position: absolute; top:0; bottom:0; right:0; left:0; }
+    #infoBox {position: absolute; top: 5px; left: 5px; padding: 20px; font-size: 14px; color: #fff; font-family: sans-serif; }
+    .box {box-shadow: 2px 2px 0px #949494; background: #444; opacity: 0.8;  }
+    a:link {color: #fff; }
+    a:visited {color: #fff; }
+    a:hover {color: #fff; }
   </style>
+
 </head>
 <body>
 
-  <div id="sidebar" class="sidebar collapsed">
-		<ul class="sidebar-tabs" role="tablist">
-			<li><a href="#home" role="tab"><i class="fa fa-question-circle"></i></a></li>
-		</ul>
-  		<div class="sidebar-content active">
-  			<div class="sidebar-pane" id="home">
-  			     <h4>CT fastrak bus location real-time data</h4>
-  			     <p></p>Learn more at <a href="https://github.com/JackDougherty/transit" target="_blank">https://github.com/JackDougherty/transit</a>.</p>
-  			</div>
-  		</div>
-	</div>
-
 <div id="map"></div>
+<div id="infoBox" class="box">
+  <div id="infoBoxTitle">CTfastrak real-time bus locations<br/>
+  Refresh browser for changes. Learn more at:<br/> 
+  <a href="https://github.com/JackDougherty/transit" target="_blank">https://github.com/JackDougherty/transit</a>
+  </div>
+</div>
 
 <script>
   var map = L.map('map', {

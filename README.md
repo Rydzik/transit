@@ -4,6 +4,10 @@ CTfastrak bus location live feed from CTtransit, via City of Hartford GIS open d
 ##Demo
 http://jackdougherty.github.io/transit
 
+See also City of Hartford GIS web app (though I wanted to create my own with Leaflet)
+
+-http://hartfordgis.maps.arcgis.com/apps/SimpleViewer/index.html?appid=093c527910cb4f9db0fb85a0881ba610
+
 ##How it works
 1) CTtransit publishes real-time open data feed for CTfastrak buses (with similar data for more transit buses in future)
 http://www.cttransit.com/about/developers/realtimedata/

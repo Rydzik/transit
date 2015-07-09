@@ -1,5 +1,5 @@
 # transit
-CTfastrak bus location live feed from CTtransit, via City of Hartford GIS open data server
+CTfastrak bus location live feed from CTtransit, via City of Hartford GIS open data server, for simple Leaflet web app
 
 ##Demo
 http://jackdougherty.github.io/transit

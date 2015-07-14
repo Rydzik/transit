@@ -21,9 +21,10 @@ b) for the GeoJson API, see Download Dataset > API > GeoJson at http://gisdata.h
 
 3) Display point locations by inserting the REST endpoint in map code, easily done with open-source libraries such as [Leaflet](http://leafletjs.com) and [Esri Leaflet](http://esri.github.io/esri-leaflet/)
 
-See also:
+##See also:
 
 - http://esri.github.io/esri-leaflet/examples/feature-layer-popups.html
+- http://savaslabs.com/2015/05/18/mapping-geojson.html
 
 ##To do:
 

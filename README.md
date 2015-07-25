@@ -35,4 +35,3 @@ b) for the GeoJson API, see Download Dataset > API > GeoJson at http://gisdata.h
 - http://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html
 
 Feedback welcome by email (jack.dougherty@trincoll.edu) or GitHub pull requests
-

@@ -1,9 +1,12 @@
 # transit
 CTfastrak bus location live feed from CTtransit, via City of Hartford GIS open data server, for simple Leaflet web app
 
-##Demos of two methods
+##Demos of different methods
 - REST endpoint - http://jackdougherty.github.io/transit/index.html
-- GeoJson API - http://jackdougherty.github.io/transit/geojson.html
+- GeoJson API (not reliably working) - http://jackdougherty.github.io/transit/geojson.html
+- JSON direct feed from CTfastrak/CTtransit - http://jackdougherty.github.io/transit/index2.html 
+(not working due to server error: XMLHttpRequest cannot load http://65.213.12.244/realtimefeed/vehicle/vehiclepositions.json. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost' is therefore not allowed access.)
+
 
 See also City of Hartford GIS web app (though I wanted to create my own with Leaflet)
 

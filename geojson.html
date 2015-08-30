@@ -13,7 +13,7 @@
 
   <!-- Load Esri Leaflet from CDN -->
   <!-- we encourage you to replace 'latest' with a hardcode version number (like '1.0.0-rc.7') in production applications -->
-  <script src="http://cdn.jsdelivr.net/leaflet.esri/latest/esri-leaflet.js"></script>
+  <script src="http://cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js"></script>
 
   <style>
     body { margin:0; padding:0; }
@@ -36,7 +36,7 @@
 
 <script>
   var map = L.map('map').setView([41.7665, -72.68], 15);
-  L.esri.basemapLayer('Streets').addTo(map);
+  var layer = L.esri.basemapLayer('Streets').addTo(map);
 
 function addDataToMap(data, map) {
     var dataLayer = L.geoJson(data, {
